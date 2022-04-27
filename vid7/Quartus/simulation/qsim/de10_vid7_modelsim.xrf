@@ -1,0 +1,14 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/kirk/Documents/DE10-nano/live_demos/vid7/Quartus/de10_vid7.v
+source_file = 1, C:/Users/kirk/Documents/DE10-nano/live_demos/vid7/Quartus/example2.bdf
+source_file = 1, C:/Users/kirk/Documents/DE10-nano/live_demos/vid7/Quartus/Waveform.vwf
+source_file = 1, C:/Users/kirk/Documents/DE10-nano/live_demos/vid7/Quartus/example1.bdf
+source_file = 1, C:/Users/kirk/Documents/DE10-nano/live_demos/vid7/Quartus/db/de10_vid7.cbx.xml
+design_name = f1
+instance = comp, \x~output , x~output, f1, 1
+instance = comp, \y~output , y~output, f1, 1
+instance = comp, \sw1~input , sw1~input, f1, 1
+instance = comp, \sw2~input , sw2~input, f1, 1
+instance = comp, \sw3~input , sw3~input, f1, 1
+instance = comp, \o1~0 , o1~0, f1, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, f1, 1

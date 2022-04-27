@@ -1,0 +1,9 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/kirk/Documents/DE10-nano/live_demos/vid6/and2_v.v
+source_file = 1, C:/Users/kirk/Documents/DE10-nano/live_demos/vid6/Waveform.vwf
+source_file = 1, C:/Users/kirk/Documents/DE10-nano/live_demos/vid6/db/and2_v.cbx.xml
+design_name = and2_v
+instance = comp, \y~output , y~output, and2_v, 1
+instance = comp, \b~input , b~input, and2_v, 1
+instance = comp, \a~input , a~input, and2_v, 1
+instance = comp, \y~0 , y~0, and2_v, 1

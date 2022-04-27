@@ -1,0 +1,6 @@
+|and2_v
+y << y.DB_MAX_OUTPUT_PORT_TYPE
+b => y.IN0
+a => y.IN1
+
+

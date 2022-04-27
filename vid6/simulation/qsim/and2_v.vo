@@ -1,0 +1,117 @@
+// Copyright (C) 2017  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Intel and sold by Intel or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition"
+
+// DATE "12/07/2021 17:53:33"
+
+// 
+// Device: Altera 5CSEBA6U23I7 Package UFBGA672
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module and2_v (
+	y,
+	b,
+	a);
+output 	y;
+input 	b;
+input 	a;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \y~output_o ;
+wire \b~input_o ;
+wire \a~input_o ;
+wire \y~0_combout ;
+
+
+cyclonev_io_obuf \y~output (
+	.i(\y~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\y~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \y~output .bus_hold = "false";
+defparam \y~output .open_drain_output = "false";
+defparam \y~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_ibuf \b~input (
+	.i(b),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\b~input_o ));
+// synopsys translate_off
+defparam \b~input .bus_hold = "false";
+defparam \b~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_io_ibuf \a~input (
+	.i(a),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\a~input_o ));
+// synopsys translate_off
+defparam \a~input .bus_hold = "false";
+defparam \a~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_lcell_comb \y~0 (
+// Equation(s):
+// \y~0_combout  = (\b~input_o  & \a~input_o )
+
+	.dataa(!\b~input_o ),
+	.datab(!\a~input_o ),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\y~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \y~0 .extended_lut = "off";
+defparam \y~0 .lut_mask = 64'h1111111111111111;
+defparam \y~0 .shared_arith = "off";
+// synopsys translate_on
+
+assign y = \y~output_o ;
+
+endmodule

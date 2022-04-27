@@ -1,0 +1,152 @@
+//
+// Copyright (c) 2017 Intel Corporation
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
+//
+
+/dts-v1/ /plugin/;
+
+/ {
+	fragment@0 {
+		target-path = "/soc/base-fpga-region";
+
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		__overlay__ {
+			external-fpga-config;
+
+			fpga-bridges = <&fpga_bridge0 &fpga_bridge1 &fpga_bridge2>;
+
+			//
+			// define the memory mapped details of our overlay
+			//
+
+			#address-cells = <2>;
+			#size-cells = <1>;
+
+			// first ranges line represents the H2F bridge
+			// second ranges line represents the LWH2F bridge
+			ranges = <0x00000000 0x00000000 0xc0000000 0x00010000>,
+				 <0x00000001 0x00000000 0xff200000 0x00010038>;
+
+			// there is no driver for the onchip memory core, but
+			// since this is the only peripheral on the H2F bridge
+			// we'll define it as an example of how the reg binding
+			// relates to the ranges binding above
+			ocram_64k: memory@0x000000000 {
+				compatible = "not,compatible";
+				reg = <0x00000000 0x00000000 0x00010000>;
+				clocks = <&clk_0>;
+			}; // ocram_64k
+
+			// the rest of the peripherals below are on the LWH2F
+
+			led_pio: gpio@0x100010000 {
+				compatible = "altr,pio-1.0";
+				reg = <0x00000001 0x00010000 0x00000010>;
+				clocks = <&clk_0>;
+				altr,ngpio = <8>;
+				#gpio-cells = <2>;
+				gpio-controller;
+			}; // led_pio
+
+			button_pio: gpio@0x100010010 {
+				compatible = "altr,pio-1.0";
+				reg = <0x00000001 0x00010010 0x00000010>;
+				clocks = <&clk_0>;
+				altr,ngpio = <1>;
+				#gpio-cells = <2>;
+				gpio-controller;
+			}; // button_pio
+
+			switch_pio: gpio@0x100010020 {
+				compatible = "altr,pio-1.0";
+				reg = <0x00000001 0x00010020 0x00000010>;
+				clocks = <&clk_0>;
+				altr,ngpio = <4>;
+				#gpio-cells = <2>;
+				gpio-controller;
+			}; // switch_pio
+
+			system_id: sysid@0x100010030 {
+				compatible = "altr,sysid-1.0";
+				reg = <0x00000001 0x00010030 0x00000008>;
+				clocks = <&clk_0>;
+			}; // system_id
+
+			//
+			// define the non-memory mapped details of our overlay
+			//
+
+			clk_0: clk_0 {
+				compatible = "fixed-clock";
+				#clock-cells;
+				clock-frequency;
+				clock-output-names = "clk_0-clk";
+			}; // clk_0
+
+			// define the led_pio pins as gpio-leds, this will allow
+			// the gpio-leds driver to control these ports
+			leds: leds {
+				compatible = "gpio-leds";
+
+				led_fpga0: fpga0 {
+					label = "fpga_led0";
+					gpios = <&led_pio 0 0>;
+				}; // led_fpga0
+
+				led_fpga1: fpga1 {
+					label = "fpga_led1";
+					gpios = <&led_pio 1 0>;
+				}; // led_fpga1
+
+				led_fpga2: fpga2 {
+					label = "fpga_led2";
+					gpios = <&led_pio 2 0>;
+				}; // led_fpga2
+
+				led_fpga3: fpga3 {
+					label = "fpga_led3";
+					gpios = <&led_pio 3 0>;
+				}; // led_fpga3
+
+				led_fpga4: fpga4 {
+					label = "fpga_led4";
+					gpios = <&led_pio 4 0>;
+				}; // led_fpga4
+
+				led_fpga5: fpga5 {
+					label = "fpga_led5";
+					gpios = <&led_pio 5 0>;
+				}; // led_fpga5
+
+				led_fpga6: fpga6 {
+					label = "fpga_led6";
+					gpios = <&led_pio 6 0>;
+				}; // led_fpga6
+
+				led_fpga7: fpga7 {
+					label = "fpga_led7";
+					gpios = <&led_pio 7 0>;
+				}; // led_fpga7
+			}; // leds
+		}; // __overlay__
+	}; // fragment@0
+}; // /

@@ -1,0 +1,8 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/kirk/Documents/DE10-nano/live_demos/vid3/and_block.bdf
+source_file = 1, C:/Users/kirk/Documents/DE10-nano/live_demos/vid3/db/and_block.cbx.xml
+design_name = and_block
+instance = comp, \c~output , c~output, and_block, 1
+instance = comp, \b~input , b~input, and_block, 1
+instance = comp, \a~input , a~input, and_block, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, and_block, 1

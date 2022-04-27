@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/kirk/Documents/DE10-nano/live_demos/vid4/simulation/qsim
+vkmap_demo
+Z1 !s110 1638497363
+!i10b 1
+!s100 ];JKmXlVgI1ii5fgX]SL22
+IelQ6@oiQD@M[nD=;>2nCN0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1638497358
+8kmap_demo.vo
+Fkmap_demo.vo
+L0 32
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1638497363.000000
+!s107 kmap_demo.vo|
+!s90 -work|work|kmap_demo.vo|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vkmap_demo_vlg_vec_tst
+R1
+!i10b 1
+!s100 G1KV8HD`3PLGi9nlS=Nh@3
+ITXZZ4e:e<R=jBb<a>DM;;0
+R2
+R0
+w1638497357
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 30
+R3
+r1
+!s85 0
+31
+R4
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R5
+R6

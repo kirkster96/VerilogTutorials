@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/kirk/Documents/DE10-nano/live_demos/vid9/simulation/qsim
+vbyte_adder
+Z1 !s110 1649808168
+!i10b 1
+!s100 ;GPz8Zo9EPXcfc:F6F=0M1
+IUBWm07?FH;cj7IoeS3eZC0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1649808166
+8byte_adder.vo
+Fbyte_adder.vo
+L0 32
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1649808168.000000
+!s107 byte_adder.vo|
+!s90 -work|work|byte_adder.vo|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vbyte_adder_vlg_vec_tst
+R1
+!i10b 1
+!s100 RD]C?Sf1zH`bU7jNeMjlN0
+IDU_PaZ4UR8SMHd8XGi`XL1
+R2
+R0
+w1649808163
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 30
+R3
+r1
+!s85 0
+31
+R4
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R5
+R6

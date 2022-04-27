@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/kirk/Documents/DE10-nano/live_demos/vid8/simulation/qsim
+vmux2to1
+Z1 !s110 1649551741
+!i10b 1
+!s100 GkK<5LQX;lTW4M6c4?Koc3
+IUO=Lie`Y[1Gh6Nz1]?b6[0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1649551730
+8mux2to1.vo
+Fmux2to1.vo
+L0 32
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1649551740.000000
+!s107 mux2to1.vo|
+!s90 -work|work|mux2to1.vo|
+!i113 1
+Z4 o-work work
+Z5 tCvgOpt 0
+vmux2to1_vlg_vec_tst
+R1
+!i10b 1
+!s100 K9EOf^`e68lljbPj`DMb>2
+I?gjb;7LhiLMg6AM[L`R350
+R2
+R0
+w1649551724
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 30
+R3
+r1
+!s85 0
+31
+!s108 1649551741.000000
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R4
+R5

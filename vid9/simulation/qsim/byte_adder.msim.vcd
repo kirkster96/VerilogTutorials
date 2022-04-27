@@ -1,0 +1,272 @@
+$comment
+	File created using the following command:
+		vcd file byte_adder.msim.vcd -direction
+$end
+$date
+	Tue Apr 12 17:02:50 2022
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module byte_adder_vlg_vec_tst $end
+$var reg 8 ! a [7:0] $end
+$var reg 8 " b [7:0] $end
+$var wire 1 # c [7] $end
+$var wire 1 $ c [6] $end
+$var wire 1 % c [5] $end
+$var wire 1 & c [4] $end
+$var wire 1 ' c [3] $end
+$var wire 1 ( c [2] $end
+$var wire 1 ) c [1] $end
+$var wire 1 * c [0] $end
+
+$scope module i1 $end
+$var wire 1 + gnd $end
+$var wire 1 , vcc $end
+$var wire 1 - unknown $end
+$var tri1 1 . devclrn $end
+$var tri1 1 / devpor $end
+$var tri1 1 0 devoe $end
+$var wire 1 1 c[0]~output_o $end
+$var wire 1 2 c[1]~output_o $end
+$var wire 1 3 c[2]~output_o $end
+$var wire 1 4 c[3]~output_o $end
+$var wire 1 5 c[4]~output_o $end
+$var wire 1 6 c[5]~output_o $end
+$var wire 1 7 c[6]~output_o $end
+$var wire 1 8 c[7]~output_o $end
+$var wire 1 9 a[0]~input_o $end
+$var wire 1 : b[0]~input_o $end
+$var wire 1 ; Add0~1_sumout $end
+$var wire 1 < a[1]~input_o $end
+$var wire 1 = b[1]~input_o $end
+$var wire 1 > Add0~2 $end
+$var wire 1 ? Add0~5_sumout $end
+$var wire 1 @ a[2]~input_o $end
+$var wire 1 A b[2]~input_o $end
+$var wire 1 B Add0~6 $end
+$var wire 1 C Add0~9_sumout $end
+$var wire 1 D a[3]~input_o $end
+$var wire 1 E b[3]~input_o $end
+$var wire 1 F Add0~10 $end
+$var wire 1 G Add0~13_sumout $end
+$var wire 1 H a[4]~input_o $end
+$var wire 1 I b[4]~input_o $end
+$var wire 1 J Add0~14 $end
+$var wire 1 K Add0~17_sumout $end
+$var wire 1 L a[5]~input_o $end
+$var wire 1 M b[5]~input_o $end
+$var wire 1 N Add0~18 $end
+$var wire 1 O Add0~21_sumout $end
+$var wire 1 P a[6]~input_o $end
+$var wire 1 Q b[6]~input_o $end
+$var wire 1 R Add0~22 $end
+$var wire 1 S Add0~25_sumout $end
+$var wire 1 T a[7]~input_o $end
+$var wire 1 U b[7]~input_o $end
+$var wire 1 V Add0~26 $end
+$var wire 1 W Add0~29_sumout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 !
+b0 "
+0*
+0)
+0(
+0'
+0&
+0%
+0$
+0#
+0+
+1,
+x-
+1.
+1/
+10
+01
+02
+03
+04
+05
+06
+07
+08
+09
+0:
+0;
+0<
+0=
+0>
+0?
+0@
+0A
+0B
+0C
+0D
+0E
+0F
+0G
+0H
+0I
+0J
+0K
+0L
+0M
+0N
+0O
+0P
+0Q
+0R
+0S
+0T
+0U
+0V
+0W
+$end
+#100000
+b1 !
+19
+1;
+11
+1*
+#200000
+b11 !
+b1 "
+b10 !
+1:
+09
+1<
+1?
+12
+1)
+#300000
+b11 !
+19
+1>
+0;
+01
+1B
+0*
+0?
+02
+0)
+1C
+13
+1(
+#400000
+b111 !
+b11 "
+b101 !
+b10 "
+b100 !
+0:
+1=
+09
+0<
+1@
+1F
+0>
+0C
+03
+0B
+0(
+1G
+1?
+12
+14
+0F
+1'
+1)
+1C
+13
+1(
+0G
+04
+0'
+#500000
+b101 !
+19
+1;
+11
+1*
+#600000
+b111 !
+b11 "
+b110 !
+1:
+09
+1<
+1B
+0?
+02
+1F
+0)
+0C
+03
+0(
+1G
+14
+1'
+#700000
+b111 !
+19
+1>
+0;
+01
+0*
+1?
+12
+1)
+#800000
+b1111 !
+b111 "
+b1011 !
+b101 "
+b1001 !
+b100 "
+b1000 !
+0:
+0=
+1A
+09
+0<
+0@
+1D
+1J
+0B
+0>
+0G
+04
+0F
+0'
+1K
+1C
+0?
+02
+13
+15
+0J
+1&
+1(
+0)
+1G
+14
+1'
+0K
+05
+0&
+#900000
+b1001 !
+19
+1;
+11
+1*
+#1000000

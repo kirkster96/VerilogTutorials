@@ -1,0 +1,32 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/kirk/Documents/DE10-nano/live_demos/vid5/simulation/qsim
+v\2bit_decoder 
+!s110 1638753628
+!i10b 1
+!s100 Z6X0bDlMde:_fEBhi9TYV2
+IHFk6:@JJ_KSMa^A;SbgER2
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1638753626
+82bit_decoder.vo
+F2bit_decoder.vo
+L0 32
+OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1638753628.000000
+!s107 2bit_decoder.vo|
+!s90 -work|work|2bit_decoder.vo|
+!i113 1
+o-work work
+tCvgOpt 0
+n@1342bit_decoder@040

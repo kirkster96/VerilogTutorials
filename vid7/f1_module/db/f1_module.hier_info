@@ -1,0 +1,8 @@
+|f1_module
+x => a1.IN0
+x => a2.IN0
+y => a2.IN1
+y => a1.IN1
+out <= o1.DB_MAX_OUTPUT_PORT_TYPE
+
+

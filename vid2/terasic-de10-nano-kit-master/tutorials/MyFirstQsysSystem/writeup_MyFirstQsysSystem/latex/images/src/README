@@ -1,0 +1,23 @@
+The file 'qsys_block_diagram.fodg' is an XML source file produced by LibreOffice
+Draw, Version: 5.2.7.2, Build ID: 5.2.7.2-3.fc25.  You can open this file and
+edit it in LibreOffice Draw.
+
+To produce an image file, open the file in LibreOffice Draw:
+
+libreoffice qsys_block_diagram.fodg
+
+Then "Edit->Select All" to select only the block diagram objects.
+
+Then "File->Export..." to bring up the export dialog box.
+
+Select the "Selection" checkbox in the bottom left of the dialog.
+
+Select the "PNG" file format in the format selection spinner in the bottom right
+of the dialog.
+
+Click the "Save" button.
+
+The defaults for the next save dialog should be fine.
+
+Click the "OK" button.
+

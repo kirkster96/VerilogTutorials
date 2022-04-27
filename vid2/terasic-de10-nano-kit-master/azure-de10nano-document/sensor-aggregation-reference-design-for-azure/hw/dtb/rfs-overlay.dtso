@@ -1,0 +1,25 @@
+/dts-v1/;
+/plugin/; 
+
+/ {
+  fragment@0 { 
+    target-path = "/soc/base-fpga-region"; 
+ 
+    #address-cells = <0x1>; 
+    #size-cells = <0x1>; 
+    __overlay__ { 
+        #address-cells = <2>; 
+        #size-cells = <1>; 
+
+        //external-fpga-config;          
+        firmware-name = "Module5_Sample_HW.rbf";
+
+
+        fpga-bridges = <&fpga_bridge0 &fpga_bridge1>;
+
+        ranges = <0x00000000 0x00000000 0xc0000000 0x20000000>,
+                 <0x00000001 0x00000000 0xff200000 0x00200000>;
+
+      }; 
+    }; 
+};

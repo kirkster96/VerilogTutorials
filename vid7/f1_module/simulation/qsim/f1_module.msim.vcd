@@ -1,0 +1,100 @@
+$comment
+	File created using the following command:
+		vcd file f1_module.msim.vcd -direction
+$end
+$date
+	Tue Apr 05 18:22:57 2022
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module f1_module_vlg_vec_tst $end
+$var reg 1 ! x $end
+$var reg 1 " y $end
+$var wire 1 # out $end
+
+$scope module i1 $end
+$var wire 1 $ gnd $end
+$var wire 1 % vcc $end
+$var wire 1 & unknown $end
+$var tri1 1 ' devclrn $end
+$var tri1 1 ( devpor $end
+$var tri1 1 ) devoe $end
+$var wire 1 * out~output_o $end
+$var wire 1 + x~input_o $end
+$var wire 1 , y~input_o $end
+$var wire 1 - o1~0_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+0$
+1%
+x&
+1'
+1(
+1)
+0*
+0+
+0,
+0-
+$end
+#100000
+1!
+1+
+1-
+1*
+1#
+#200000
+1"
+0!
+1,
+0+
+#300000
+1!
+1+
+0-
+0*
+0#
+#400000
+0"
+0!
+0,
+0+
+#500000
+1!
+1+
+1-
+1*
+1#
+#600000
+1"
+0!
+1,
+0+
+#700000
+1!
+1+
+0-
+0*
+0#
+#800000
+0"
+0!
+0,
+0+
+#900000
+1!
+1+
+1-
+1*
+1#
+#1000000

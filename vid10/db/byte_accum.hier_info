@@ -1,0 +1,19 @@
+|byte_accum
+btn => count[0].CLK
+btn => count[1].CLK
+btn => count[2].CLK
+btn => count[3].CLK
+btn => count[4].CLK
+btn => count[5].CLK
+btn => count[6].CLK
+btn => count[7].CLK
+led[0] << count[0].DB_MAX_OUTPUT_PORT_TYPE
+led[1] << count[1].DB_MAX_OUTPUT_PORT_TYPE
+led[2] << count[2].DB_MAX_OUTPUT_PORT_TYPE
+led[3] << count[3].DB_MAX_OUTPUT_PORT_TYPE
+led[4] << count[4].DB_MAX_OUTPUT_PORT_TYPE
+led[5] << count[5].DB_MAX_OUTPUT_PORT_TYPE
+led[6] << count[6].DB_MAX_OUTPUT_PORT_TYPE
+led[7] << count[7].DB_MAX_OUTPUT_PORT_TYPE
+
+

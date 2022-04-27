@@ -1,0 +1,29 @@
+# do f1_module.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:22:55 on Apr 05,2022
+# vlog -work work f1_module.vo 
+# -- Compiling module f1_module
+# 
+# Top level modules:
+# 	f1_module
+# End time: 18:22:55 on Apr 05,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:22:55 on Apr 05,2022
+# vlog -work work Waveform.vwf.vt 
+# -- Compiling module f1_module_vlg_vec_tst
+# 
+# Top level modules:
+# 	f1_module_vlg_vec_tst
+# End time: 18:22:55 on Apr 05,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.f1_module_vlg_vec_tst 
+# Start time: 18:22:55 on Apr 05,2022
+# Loading work.f1_module_vlg_vec_tst
+# Loading work.f1_module
+# after#25
+# ** Note: $finish    : Waveform.vwf.vt(47)
+#    Time: 1 us  Iteration: 0  Instance: /f1_module_vlg_vec_tst
+# End time: 18:22:57 on Apr 05,2022, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0

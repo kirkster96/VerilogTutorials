@@ -1,0 +1,77 @@
+Copyright (c) 2021 Terasic Inc.
+
+The source files included in this project may be used and distributed without restriction provided that this copyright statement is not removed from the project and that any derivitive work contains the original copyright notice and the associated disclaimer. 
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+/////////////////////////////////////////////////////////////////////
+////                                                             ////
+////  WISHBONE revB.2 compliant I2C Master controller Top-level  ////
+////                                                             ////
+////                                                             ////
+////  Author: Richard Herveille                                  ////
+////          richard@asics.ws                                   ////
+////          www.asics.ws                                       ////
+////                                                             ////
+////  Downloaded from: http://www.opencores.org/projects/i2c/    ////
+////                                                             ////
+/////////////////////////////////////////////////////////////////////
+////                                                             ////
+//// Copyright (C) 2001 Richard Herveille                        ////
+////                    richard@asics.ws                         ////
+////                                                             ////
+//// This source file may be used and distributed without        ////
+//// restriction provided that this copyright statement is not   ////
+//// removed from the file and that any derivative work contains ////
+//// the original copyright notice and the associated disclaimer.////
+////                                                             ////
+////     THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY     ////
+//// EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED   ////
+//// TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS   ////
+//// FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL THE AUTHOR      ////
+//// OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,         ////
+//// INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES    ////
+//// (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE   ////
+//// GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR        ////
+//// BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF  ////
+//// LIABILITY, WHETHER IN  CONTRACT, STRICT LIABILITY, OR TORT  ////
+//// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT  ////
+//// OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE         ////
+//// POSSIBILITY OF SUCH DAMAGE.                                 ////
+////                                                             ////
+/////////////////////////////////////////////////////////////////////
+
+//  CVS Log
+//
+//  $Id: i2c_master_top.v,v 1.10 2003/09/01 10:34:38 rherveille Exp $
+//
+//  $Date: 2003/09/01 10:34:38 $
+//  $Revision: 1.10 $
+//  $Author: rherveille $
+//  $Locker:  $
+//  $State: Exp $
+//
+// Change History:
+//               $Log: i2c_master_top.v,v $
+//               Revision 1.10  2003/09/01 10:34:38  rherveille
+//               Fix a blocking vs. non-blocking error in the wb_dat output mux.
+//
+//               Revision 1.9  2003/01/09 16:44:45  rherveille
+//               Fixed a bug in the Command Register declaration.
+//
+//               Revision 1.8  2002/12/26 16:05:12  rherveille
+//               Small code simplifications
+//
+//               Revision 1.7  2002/12/26 15:02:32  rherveille
+//               Core is now a Multimaster I2C controller
+//
+//               Revision 1.6  2002/11/30 22:24:40  rherveille
+//               Cleaned up code
+//
+//               Revision 1.5  2001/11/10 10:52:55  rherveille
+//               Changed PRER reset value from 0x0000 to 0xffff, conform specs.
+//

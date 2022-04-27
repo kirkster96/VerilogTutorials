@@ -1,0 +1,5 @@
+module and2_v(y,b,a);
+	output y;       // module output
+	input  b,a;     // module input
+	assign c = a&b; // continuous assignment
+endmodule

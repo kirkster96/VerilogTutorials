@@ -1,0 +1,126 @@
+$comment
+	File created using the following command:
+		vcd file de10_vid7.msim.vcd -direction
+$end
+$date
+	Tue Apr 05 18:05:18 2022
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module de10_vid7_vlg_vec_tst $end
+$var reg 1 ! sw1 $end
+$var reg 1 " sw2 $end
+$var reg 1 # sw3 $end
+$var wire 1 $ x $end
+$var wire 1 % y $end
+
+$scope module i1 $end
+$var wire 1 & gnd $end
+$var wire 1 ' vcc $end
+$var wire 1 ( unknown $end
+$var tri1 1 ) devclrn $end
+$var tri1 1 * devpor $end
+$var tri1 1 + devoe $end
+$var wire 1 , x~output_o $end
+$var wire 1 - y~output_o $end
+$var wire 1 . sw1~input_o $end
+$var wire 1 / sw2~input_o $end
+$var wire 1 0 inst~combout $end
+$var wire 1 1 sw3~input_o $end
+$var wire 1 2 inst4~0_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+1$
+0%
+0&
+1'
+x(
+1)
+1*
+1+
+1,
+0-
+0.
+0/
+00
+01
+02
+$end
+#100000
+1!
+1.
+10
+0,
+0$
+#200000
+1"
+0!
+1/
+0.
+12
+1-
+1%
+#300000
+1!
+1.
+00
+1,
+1$
+#400000
+1#
+0"
+0!
+11
+0/
+0.
+#500000
+1!
+1.
+10
+02
+0-
+0,
+0$
+0%
+#600000
+1"
+0!
+1/
+0.
+12
+1-
+1%
+#700000
+1!
+1.
+00
+1,
+1$
+#800000
+0#
+0"
+0!
+01
+0/
+0.
+02
+0-
+0%
+#900000
+1!
+1.
+10
+0,
+0$
+#1000000

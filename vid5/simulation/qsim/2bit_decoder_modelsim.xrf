@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/kirk/Documents/DE10-nano/live_demos/vid5/2bit_decoder.bdf
+source_file = 1, C:/Users/kirk/Documents/DE10-nano/live_demos/vid5/Waveform.vwf
+source_file = 1, C:/Users/kirk/Documents/DE10-nano/live_demos/vid5/db/2bit_decoder.cbx.xml
+design_name = \2bit_decoder 
+instance = comp, \Y0~output , Y0~output, \2bit_decoder , 1
+instance = comp, \Y1~output , Y1~output, \2bit_decoder , 1
+instance = comp, \Y2~output , Y2~output, \2bit_decoder , 1
+instance = comp, \Y3~output , Y3~output, \2bit_decoder , 1
+instance = comp, \A~input , A~input, \2bit_decoder , 1
+instance = comp, \B~input , B~input, \2bit_decoder , 1
+instance = comp, \inst2~0 , inst2~0, \2bit_decoder , 1
+instance = comp, \inst2~1 , inst2~1, \2bit_decoder , 1
+instance = comp, \inst2~2 , inst2~2, \2bit_decoder , 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, \2bit_decoder , 1

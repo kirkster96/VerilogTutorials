@@ -1,0 +1,85 @@
+--------------------------------------------------------------------------------
+Make all desired edits to the repo contents.
+
+--------------------------------------------------------------------------------
+Update the release info in 'tutorials/common/latex/common_preamble.tex' so that
+the PDF links operate properly.
+
+Update the the variable 'TheReleaseTag' to the next release tag value that you
+plan to tag this next release with:
+
+\newcommand{\TheReleaseTag}{tutorials-v1.0.0}
+
+Update the variable 'TheToolsReleaseVersion' to the Intel FPGA tools that are
+used to build this release:
+
+\newcommand{\TheToolsReleaseVersion}{17.0.0}
+
+--------------------------------------------------------------------------------
+Check the repo integrity to ensure that we are releasing clean content.
+
+tutorials/.scripts/repo_integrity_checks.sh
+
+--------------------------------------------------------------------------------
+Create the release commit.
+
+Use the signoff argument to apply the 'Signed-off-by:' line to the commit.  This
+serves as the developer attestation that the commit content is in compliance
+with the repo IP plan requirements, SWLC, SDL, OS PDT, etc.
+
+Use a brief summary title line that describes the commit followed by any
+highlights worth noting in the body of the commit message.
+
+git commit -s -m "Initial content for tutorials
+
+Add a 'LICENSE' file to the top of the repo.
+Add a 'README.md' file to the top of the repo.
+Add the 'code-samples/README.md' to the code-samples directory.
+Add a new 'tutorials/' directory to the repo.
+
+"
+
+--------------------------------------------------------------------------------
+Create the release tag.
+
+Ensure that the tag value is identical to the value that was edited into the
+'tutorials/common/latex/common_preamble.tex' file so that the PDF links work.
+
+Format the tag title line as shown below with 'Release ' prefixed to the actual
+release tag value.  Then mention the tools version that is used to build the
+release in the body, along with any highlights worth noting about the release.
+
+The version number scheme is X.Y.Z.  The Z digit is incremented for extremely
+minor release changes, like a typo that was corrected in an otherwise fine
+release.  The Y digit is incremented for the typical release triggers, like a
+new tools release is used to build the tutorials, or some functional change is
+applied to them.  The X digit will rarely be incremented.
+
+git tag "tutorials-v1.0.0" -m "Release tutorials-v1.0.0
+
+This release is built with the 17.0 version of the Intel FPGA
+development tools.
+
+This is the initial release for the tutorials content.
+
+"
+
+--------------------------------------------------------------------------------
+Build the tutorial contents.
+
+'tutorials/build_everything.sh'
+
+This will create a 'release_material' directory.
+
+--------------------------------------------------------------------------------
+Push the repo updates to GitHub.
+
+git push --all --follow-tags -u origin
+
+--------------------------------------------------------------------------------
+Upload the release material.
+
+Find the new release that you just pushed on the GitHub website and edit it.
+This allows you to upload binary content.  Upload all the ZIP and PDF files that
+were created in the 'release_material' directory during the build.
+

@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Sat Apr 09 17:57:17 2022
+Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+Revision Name : mux2to1
+Top-level Entity Name : mux2to1
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 0
+Total pins : 4
+Total virtual pins : 0
+Total block memory bits : 0
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

@@ -1,0 +1,27 @@
+|byte_adder
+c[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+c[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+c[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+c[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+c[4] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+c[5] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+c[6] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+c[7] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+b[0] => Add0.IN16
+b[1] => Add0.IN15
+b[2] => Add0.IN14
+b[3] => Add0.IN13
+b[4] => Add0.IN12
+b[5] => Add0.IN11
+b[6] => Add0.IN10
+b[7] => Add0.IN9
+a[0] => Add0.IN8
+a[1] => Add0.IN7
+a[2] => Add0.IN6
+a[3] => Add0.IN5
+a[4] => Add0.IN4
+a[5] => Add0.IN3
+a[6] => Add0.IN2
+a[7] => Add0.IN1
+
+

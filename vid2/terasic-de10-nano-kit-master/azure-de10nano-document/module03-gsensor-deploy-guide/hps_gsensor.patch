@@ -1,0 +1,234 @@
+diff -uprN not-scan/ADXL345.c modified/ADXL345.c
+--- not-scan/ADXL345.c	2021-03-11 15:04:53.000000000 +0900
++++ modified/ADXL345.c	2021-03-25 14:51:43.000000000 +0900
+@@ -1,19 +1,62 @@
+-#include "hwlib.h"
++#include <stddef.h>
++#include <stdbool.h>
++#include <stdint.h>
++#include <unistd.h>
+ #include "ADXL345.h"
+ 
+-// api for register access, defined in main.c
+-bool ADXL345_REG_WRITE(int file, uint8_t address, uint8_t value);
+-bool ADXL345_REG_READ(int file, uint8_t address,uint8_t *value);
+-bool ADXL345_REG_MULTI_READ(int file, uint8_t readaddr,uint8_t readdata[],uint8_t len);
++#define DATA_READY_TIMEOUT  (alt_ticks_per_second()/3)
+ 
++bool ADXL345_REG_WRITE(int file, uint8_t address, uint8_t value){
++	bool bSuccess = false;
++	uint8_t szValue[2];
++	
++	// write to define register
++	szValue[0] = address;
++	szValue[1] = value;
++	if (write(file, &szValue, sizeof(szValue)) == sizeof(szValue)){
++			bSuccess = true;
++	}
++		
++	
++	return bSuccess;		
++}
+ 
++bool ADXL345_REG_READ(int file, uint8_t address,uint8_t *value){
++	bool bSuccess = false;
++	uint8_t Value;
++	
++	// write to define register
++	if (write(file, &address, sizeof(address)) == sizeof(address)){
++	
++		// read back value
++		if (read(file, &Value, sizeof(Value)) == sizeof(Value)){
++			*value = Value;
++			bSuccess = true;
++		}
++	}
++		
++	
++	return bSuccess;	
++}
+ 
+-#define DATA_READY_TIMEOUT  (alt_ticks_per_second()/3)
++bool ADXL345_REG_MULTI_READ(int file, uint8_t readaddr,uint8_t readdata[], uint8_t len){
++	bool bSuccess = false;
+ 
++	// write to define register
++	if (write(file, &readaddr, sizeof(readaddr)) == sizeof(readaddr)){
++		// read back value
++		if (read(file, readdata, len) == len){
++			bSuccess = true;
++		}
++	}
++	
++		
++	return bSuccess;
++}
+ 
+ 
+ bool ADXL345_Init(int file){
+-    bool bSuccess;
++    bool bSuccess = false;
+     
+    
+     // +- 2g range, 10 bits
+@@ -66,7 +109,7 @@ bool ADXL345_IsDataReady(int file){
+ 
+ 
+ bool ADXL345_XYZ_Read(int file, uint16_t szData16[3]){
+-    bool bPass;
++    bool bPass = false;
+     uint8_t szData8[6];
+     bPass = ADXL345_REG_MULTI_READ(file, 0x32, (uint8_t *)&szData8, sizeof(szData8));
+     if (bPass){
+@@ -79,7 +122,7 @@ bool ADXL345_XYZ_Read(int file, uint16_t
+ }
+ 
+ bool ADXL345_IdRead(int file, uint8_t *pId){
+-    bool bPass;
++    bool bPass = false;
+     bPass = ADXL345_REG_READ(file, ADXL345_REG_DEVID, pId);
+     
+     return bPass;
+diff -uprN not-scan/ADXL345.h modified/ADXL345.h
+--- not-scan/ADXL345.h	2021-03-11 15:04:53.000000000 +0900
++++ modified/ADXL345.h	2021-03-11 15:04:53.000000000 +0900
+@@ -80,7 +80,10 @@
+ #define ADXL345_REG_DATAZ0      0x36  // read only
+ #define ADXL345_REG_DATAZ1      0x37  // read only
+ 
+-     
++bool ADXL345_REG_WRITE(int file, uint8_t address, uint8_t value);
++bool ADXL345_REG_READ(int file, uint8_t address,uint8_t *value);
++bool ADXL345_REG_MULTI_READ(int file, uint8_t readaddr,uint8_t readdata[],uint8_t len);
++
+ bool ADXL345_Init(int file);
+ bool ADXL345_IsDataReady(int file);
+ bool ADXL345_XYZ_Read(int file, uint16_t szData16[3]);
+diff -uprN not-scan/Makefile modified/Makefile
+--- not-scan/Makefile	2021-03-11 15:04:53.000000000 +0900
++++ modified/Makefile	2021-03-22 19:01:12.000000000 +0900
+@@ -25,4 +25,4 @@ $(TARGET): main.o ADXL345.o
+ 
+ .PHONY: clean
+ clean:
+-	rm -f $(TARGET) *.a *.o *~
++	rm -f $(TARGET) *.a *.o *~
+\ No newline at end of file
+diff -uprN not-scan/main.c modified/main.c
+--- not-scan/main.c	2021-03-11 15:04:53.000000000 +0900
++++ modified/main.c	2021-03-25 16:07:21.000000000 +0900
+@@ -2,65 +2,17 @@
+ #include <string.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <stddef.h>
++#include <stdbool.h>
++#include <stdint.h>
+ #include <unistd.h>
+ #include <linux/i2c-dev.h>
+ #include <sys/ioctl.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
+-#include "hwlib.h"
+ #include "ADXL345.h"
+ 
+-
+-
+-bool ADXL345_REG_WRITE(int file, uint8_t address, uint8_t value){
+-	bool bSuccess = false;
+-	uint8_t szValue[2];
+-	
+-	// write to define register
+-	szValue[0] = address;
+-	szValue[1] = value;
+-	if (write(file, &szValue, sizeof(szValue)) == sizeof(szValue)){
+-			bSuccess = true;
+-	}		
+-	
+-	return bSuccess;		
+-}
+-
+-bool ADXL345_REG_READ(int file, uint8_t address,uint8_t *value){
+-	bool bSuccess = false;
+-	uint8_t Value;
+-	
+-	// write to define register
+-	if (write(file, &address, sizeof(address)) == sizeof(address)){
+-	
+-		// read back value
+-		if (read(file, &Value, sizeof(Value)) == sizeof(Value)){
+-			*value = Value;
+-			bSuccess = true;
+-		}
+-	}		
+-	
+-	return bSuccess;	
+-}
+-
+-bool ADXL345_REG_MULTI_READ(int file, uint8_t readaddr,uint8_t readdata[], uint8_t len){
+-	bool bSuccess = false;
+-
+-	// write to define register
+-	if (write(file, &readaddr, sizeof(readaddr)) == sizeof(readaddr)){
+-		// read back value
+-		if (read(file, readdata, len) == len){
+-			bSuccess = true;
+-		}
+-	}			
+-	return bSuccess;
+-}
+-
+-
+-
+-
+-
+ int main(int argc, char *argv[]){
+ 	
+ 	int file;
+@@ -69,16 +21,18 @@ int main(int argc, char *argv[]){
+ 	bool bSuccess;
+ 	const int mg_per_digi = 4;
+ 	uint16_t szXYZ[3];
+-	int cnt=0, max_cnt=0;
++	/*Limited the number of messages*/
++	int cnt=0, max_cnt=500;
+ 	
+ 	printf("===== gsensor test =====\r\n");
+ 	
+ 	if (argc == 2){
+-		max_cnt = atoi(argv[1]);
++		max_cnt = (int)strtol(argv[1], NULL, 10);
+ 	}
+ 	
+ 	// open bus
+-	if ((file = open(filename, O_RDWR)) < 0) {
++	int result = (file = open(filename, O_RDWR | O_NDELAY));
++	if ( result < 0) {
+   	  /* ERROR HANDLING: you can check errno to see what went wrong */
+ 	    perror("Failed to open the i2c bus of gsensor");
+   	  exit(1);
+@@ -104,7 +58,6 @@ int main(int argc, char *argv[]){
+             printf("id=%02Xh\r\n", id);
+     }        
+     
+-    
+     while(bSuccess && (max_cnt == 0 || cnt < max_cnt)){
+         if (ADXL345_IsDataReady(file)){
+             bSuccess = ADXL345_XYZ_Read(file, szXYZ);
+@@ -121,7 +74,7 @@ int main(int argc, char *argv[]){
+     if (!bSuccess)
+         printf("Failed to access accelerometer\r\n");
+ 	
+-		if (file)
++	if (result >= 0)
+ 			close(file);
+ 			
+ 		printf("gsensor, bye!\r\n");			
+@@ -129,4 +82,4 @@ int main(int argc, char *argv[]){
+ 
+ 	return 0;
+ 	
+-}
+\ No newline at end of file
++}

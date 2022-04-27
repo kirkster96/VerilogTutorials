@@ -1,0 +1,11 @@
+/dts-v1/;
+/plugin/; 
+/ { 
+        fragment@0 { 
+                target-path = "/soc/base-fpga-region"; 
+
+                __overlay__ { 
+                firmware-name = "LHoWa_TPat.rbf";
+        }; 
+  }; 
+};

@@ -1,0 +1,9 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/kirk/Documents/DE10-nano/live_demos/vid8/mux2to1.v
+source_file = 1, C:/Users/kirk/Documents/DE10-nano/live_demos/vid8/db/mux2to1.cbx.xml
+design_name = mux2to1
+instance = comp, \c~output , c~output, mux2to1, 1
+instance = comp, \s~input , s~input, mux2to1, 1
+instance = comp, \a~input , a~input, mux2to1, 1
+instance = comp, \b~input , b~input, mux2to1, 1
+instance = comp, \c~0 , c~0, mux2to1, 1

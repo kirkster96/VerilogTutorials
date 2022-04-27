@@ -1,0 +1,8 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/kirk/Documents/DE10-nano/live_demos/vid4/kmap_demo.bdf
+source_file = 1, C:/Users/kirk/Documents/DE10-nano/live_demos/vid4/db/kmap_demo.cbx.xml
+design_name = kmap_demo
+instance = comp, \Y~output , Y~output, kmap_demo, 1
+instance = comp, \A~input , A~input, kmap_demo, 1
+instance = comp, \C~input , C~input, kmap_demo, 1
+instance = comp, \B~input , B~input, kmap_demo, 1

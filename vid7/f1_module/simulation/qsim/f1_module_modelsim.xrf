@@ -1,0 +1,9 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/kirk/Documents/DE10-nano/live_demos/vid7/f1_module/f1_module.v
+source_file = 1, C:/Users/kirk/Documents/DE10-nano/live_demos/vid7/f1_module/Waveform.vwf
+source_file = 1, C:/Users/kirk/Documents/DE10-nano/live_demos/vid7/f1_module/db/f1_module.cbx.xml
+design_name = f1_module
+instance = comp, \out~output , out~output, f1_module, 1
+instance = comp, \x~input , x~input, f1_module, 1
+instance = comp, \y~input , y~input, f1_module, 1
+instance = comp, \o1~0 , o1~0, f1_module, 1

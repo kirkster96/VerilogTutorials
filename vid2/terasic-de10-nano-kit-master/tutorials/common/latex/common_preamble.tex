@@ -1,0 +1,150 @@
+%
+% Copyright (c) 2017 Intel Corporation
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to
+% deal in the Software without restriction, including without limitation the
+% rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+% sell copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in
+% all copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+% FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+% IN THE SOFTWARE.
+%
+
+\ifcsname repoTopPath\endcsname
+\GenericInfo{}{repoTopPath is defined}
+\else
+\GenericError{}{In file 'custom_preamble.tex', 'repoTopPath' is not defined}{Please define repoTopPath before including this file.}{Please define repoTopPath before including this file.}
+\fi
+
+\documentclass{article}
+
+% set the input and output encodings
+\usepackage[ascii]{inputenc}
+\usepackage[T1]{fontenc}
+
+% set sans serif Latin Modern as the default font family typeface
+\usepackage{lmodern}
+
+% support for texttildelow
+\usepackage{textcomp}
+
+% so we can insert images into the document
+\usepackage{graphicx}
+% this is where our image sources reside
+\graphicspath{
+	{images/}
+	{\repoTopPath/MyFirstFPGA/writeup_MyFirstFPGA/latex/images/}
+	{\repoTopPath/MyFirstQsysSystem/writeup_MyFirstQsysSystem/latex/images/}
+	{\repoTopPath/MyFirstQsysSystem/writeup_InteractSystemConsole/latex/images/}
+	{\repoTopPath/MyFirstHPSSystem/writeup_MyFirstHPSSystem/latex/images/}
+	{\repoTopPath/MyFirstHPSSystem/writeup_u-boot/latex/images/}
+}
+
+% so we can the \subfigure environment
+\usepackage{subcaption}
+
+% so we can easily change the page margins
+\usepackage{geometry}
+\geometry{
+	letterpaper,
+	portrait,
+	left=0.75in,
+	right=0.75in,
+	top=0.75in,
+	bottom=0.75in,
+}
+
+% so we can use 'H' to strictly position figures
+\usepackage{float}
+
+% so we can use inline \textquote
+\usepackage{csquotes}
+
+% so we can import code listings from source files
+\usepackage{listings}
+
+% so we can get automatic cross referencing for most objects
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    %bookmarks=true, %--this is already invoked by default
+}
+
+% so we can highlight code
+\usepackage{minted}
+
+% so we can background color minted highlights
+\usepackage[dvipsnames]{xcolor}
+
+% so we can edit enumerate spacing parameters
+\usepackage{enumitem}
+
+% so we can attach files to the PDF
+\usepackage{attachfile}
+
+% so we can shade note sections
+\usepackage{tcolorbox}
+
+% so we can adjust margins
+\usepackage{changepage}
+
+% for easy hightlighting \hl
+\usepackage{soul}
+
+% so we can change the TOC format easily
+\usepackage{tocloft}
+% configure dots to fill section and subsections in TOC
+\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}}
+
+% define a background color for our minted text blocks
+\definecolor{MyMintedBGColor}{HTML}{F0F0F0}
+
+%---------------------------------------------------------------
+% This is a list of default text sizes from smallest to largest
+%---------------------------------------------------------------
+% \tiny
+% \scriptsize
+% \footnotesize
+% \small
+% \normalsize
+% \large
+% \Large
+% \LARGE
+% \huge
+% \Huge
+
+%---------------------------------------------------------------
+% Custom Commands
+%---------------------------------------------------------------
+
+% quick place holder to get attention
+\newcommand{\MyFIXME}{\colorbox{yellow!80!}{\textcolor{red}{FIXME}}}
+
+% define version sensitive macro commands for SD card image and archive names
+\newcommand{\MySDIMAGE}{de10-\allowbreak nano-\allowbreak image-\allowbreak Angstrom-\allowbreak \textcolor{red}{v2016.12}.\allowbreak socfpga-sdimg}
+\newcommand{\MySDIMAGETGZ}{\MySDIMAGE.\allowbreak \textcolor{red}{2017.03.31}.\allowbreak tgz}
+\newcommand{\MySDSRCTGZ}{\MySDIMAGE.\allowbreak \textcolor{red}{2017.03.31}.\allowbreak sources.\allowbreak tgz}
+
+% define git repository commands
+\newcommand{\TheGitRepoURL}{https://github.com/intel-iot-devkit/terasic-de10-nano-kit}
+\newcommand{\TheReleaseTag}{tutorials-v1.0.0}
+\newcommand{\TheReleasesURL}{\TheGitRepoURL/releases/download/\TheReleaseTag}
+\newcommand{\TheRawURL}{\TheGitRepoURL/raw/\TheReleaseTag/tutorials}
+\newcommand{\TheBlobURL}{\TheGitRepoURL/blob/\TheReleaseTag/tutorials}
+
+% tools release used for validation
+\newcommand{\TheToolsReleaseVersion}{17.0.0}
+
