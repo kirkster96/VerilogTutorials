@@ -1,0 +1,87 @@
+|sevSegCounter
+clk => clk.IN1
+counter[0] <= counter[0].DB_MAX_OUTPUT_PORT_TYPE
+counter[1] <= counter[1].DB_MAX_OUTPUT_PORT_TYPE
+counter[2] <= counter[2].DB_MAX_OUTPUT_PORT_TYPE
+counter[3] <= counter[3].DB_MAX_OUTPUT_PORT_TYPE
+sevenseg0[0] <= sevSegDecoder:U1.port0
+sevenseg0[1] <= sevSegDecoder:U1.port0
+sevenseg0[2] <= sevSegDecoder:U1.port0
+sevenseg0[3] <= sevSegDecoder:U1.port0
+sevenseg0[4] <= sevSegDecoder:U1.port0
+sevenseg0[5] <= sevSegDecoder:U1.port0
+sevenseg0[6] <= sevSegDecoder:U1.port0
+
+
+|sevSegCounter|slowClock:U2
+clk_50MHz => clk~reg0.CLK
+clk_50MHz => counter[0].CLK
+clk_50MHz => counter[1].CLK
+clk_50MHz => counter[2].CLK
+clk_50MHz => counter[3].CLK
+clk_50MHz => counter[4].CLK
+clk_50MHz => counter[5].CLK
+clk_50MHz => counter[6].CLK
+clk_50MHz => counter[7].CLK
+clk_50MHz => counter[8].CLK
+clk_50MHz => counter[9].CLK
+clk_50MHz => counter[10].CLK
+clk_50MHz => counter[11].CLK
+clk_50MHz => counter[12].CLK
+clk_50MHz => counter[13].CLK
+clk_50MHz => counter[14].CLK
+clk_50MHz => counter[15].CLK
+clk_50MHz => counter[16].CLK
+clk_50MHz => counter[17].CLK
+clk_50MHz => counter[18].CLK
+clk_50MHz => counter[19].CLK
+clk_50MHz => counter[20].CLK
+clk_50MHz => counter[21].CLK
+clk_50MHz => counter[22].CLK
+clk_50MHz => counter[23].CLK
+clk_50MHz => counter[24].CLK
+clk <= clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sevSegCounter|sevSegDecoder:U1
+x[0] <= x[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+x[1] <= x[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+x[2] <= x[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+x[3] <= x[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+x[4] <= x[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+x[5] <= x[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+x[6] <= x[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+a[0] => Mux0.IN19
+a[0] => Mux1.IN19
+a[0] => Mux2.IN19
+a[0] => Mux3.IN19
+a[0] => Mux4.IN19
+a[0] => Mux5.IN19
+a[0] => Mux6.IN19
+a[0] => Mux7.IN19
+a[1] => Mux0.IN18
+a[1] => Mux1.IN18
+a[1] => Mux2.IN18
+a[1] => Mux3.IN18
+a[1] => Mux4.IN18
+a[1] => Mux5.IN18
+a[1] => Mux6.IN18
+a[1] => Mux7.IN18
+a[2] => Mux0.IN17
+a[2] => Mux1.IN17
+a[2] => Mux2.IN17
+a[2] => Mux3.IN17
+a[2] => Mux4.IN17
+a[2] => Mux5.IN17
+a[2] => Mux6.IN17
+a[2] => Mux7.IN17
+a[3] => Mux0.IN16
+a[3] => Mux1.IN16
+a[3] => Mux2.IN16
+a[3] => Mux3.IN16
+a[3] => Mux4.IN16
+a[3] => Mux5.IN16
+a[3] => Mux6.IN16
+a[3] => Mux7.IN16
+
+
