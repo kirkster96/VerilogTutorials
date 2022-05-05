@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue May 03 20:27:29 2022
+Fitter Status : Successful - Thu May 05 12:19:47 2022
 Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 Revision Name : sevSegCounter
 Top-level Entity Name : sevSegCounter
 Family : Cyclone V
 Device : 5CSEBA6U23I7
 Timing Models : Final
-Logic utilization (in ALMs) : 29 / 41,910 ( < 1 % )
-Total registers : 37
+Logic utilization (in ALMs) : 28 / 41,910 ( < 1 % )
+Total registers : 35
 Total pins : 12 / 314 ( 4 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 5,662,720 ( 0 % )

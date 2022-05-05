@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sevSegCounter
-Tue May 03 20:26:06 2022
+Thu May 05 12:19:09 2022
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -44,7 +44,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue May 03 20:26:06 2022       ;
+; Analysis & Synthesis Status     ; Successful - Thu May 05 12:19:09 2022       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; sevSegCounter                               ;
 ; Top-level Entity Name           ; sevSegCounter                               ;
@@ -189,8 +189,8 @@ agreement for further details.
 ;     -- 7 input functions                    ; 0         ;
 ;     -- 6 input functions                    ; 5         ;
 ;     -- 5 input functions                    ; 1         ;
-;     -- 4 input functions                    ; 8         ;
-;     -- <=3 input functions                  ; 36        ;
+;     -- 4 input functions                    ; 6         ;
+;     -- <=3 input functions                  ; 38        ;
 ;                                             ;           ;
 ; Dedicated logic registers                   ; 30        ;
 ;                                             ;           ;
@@ -200,8 +200,8 @@ agreement for further details.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 26        ;
-; Total fan-out                               ; 255       ;
-; Average fan-out                             ; 2.45      ;
+; Total fan-out                               ; 253       ;
+; Average fan-out                             ; 2.43      ;
 +---------------------------------------------+-----------+
 
 
@@ -262,8 +262,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ;         1 data inputs ; 25                          ;
 ;     normal            ; 25                          ;
 ;         1 data inputs ; 1                           ;
-;         3 data inputs ; 10                          ;
-;         4 data inputs ; 8                           ;
+;         3 data inputs ; 12                          ;
+;         4 data inputs ; 6                           ;
 ;         5 data inputs ; 1                           ;
 ;         6 data inputs ; 5                           ;
 ; boundary_port         ; 12                          ;
@@ -278,7 +278,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -288,7 +288,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Tue May 03 20:25:33 2022
+    Info: Processing started: Thu May 05 12:18:59 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sevSegCounter -c sevSegCounter
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -323,7 +323,7 @@ Warning (13012): Latch sevSegDecoder:U1|x[4] has unsafe behavior File: C:/Users/
 Warning (13012): Latch sevSegDecoder:U1|x[5] has unsafe behavior File: C:/Users/kirk/Documents/DE10-nano/live_demos/vid11/sevSegCounter.v Line: 26
     Warning (13013): Ports D and ENA on the latch are fed by the same signal counter[1]~reg0 File: C:/Users/kirk/Documents/DE10-nano/live_demos/vid11/sevSegCounter.v Line: 9
 Warning (13012): Latch sevSegDecoder:U1|x[6] has unsafe behavior File: C:/Users/kirk/Documents/DE10-nano/live_demos/vid11/sevSegCounter.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal counter[1]~reg0 File: C:/Users/kirk/Documents/DE10-nano/live_demos/vid11/sevSegCounter.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal counter[2]~reg0 File: C:/Users/kirk/Documents/DE10-nano/live_demos/vid11/sevSegCounter.v Line: 9
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -332,9 +332,9 @@ Info (21057): Implemented 62 device resources after synthesis - the final resour
     Info (21059): Implemented 11 output pins
     Info (21061): Implemented 50 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
-    Info: Peak virtual memory: 4858 megabytes
-    Info: Processing ended: Tue May 03 20:26:06 2022
-    Info: Elapsed time: 00:00:33
-    Info: Total CPU time (on all processors): 00:01:21
+    Info: Peak virtual memory: 4840 megabytes
+    Info: Processing ended: Thu May 05 12:19:09 2022
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:23
 
 
