@@ -1,0 +1,14 @@
+|magcomparator
+aLarger <= aLarger.DB_MAX_OUTPUT_PORT_TYPE
+bLarger <= bLarger.DB_MAX_OUTPUT_PORT_TYPE
+abEqual <= abEqual.DB_MAX_OUTPUT_PORT_TYPE
+a => aLarger.IN0
+a => abEqual.IN0
+a => bLarger.IN0
+a => abEqual.IN0
+b => bLarger.IN1
+b => abEqual.IN1
+b => aLarger.IN1
+b => abEqual.IN1
+
+
